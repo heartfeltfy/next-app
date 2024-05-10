@@ -1,7 +1,14 @@
+'use client'
 import ClientLayout from "@/components/layouts/ClientLayout";
 import Link from "next/link";
+import { useParams } from 'next/navigation'
 
-export default function Layout({children}: { children: React.ReactNode }) {
+type Props = {
+  children: React.ReactNode
+}
+export default function Layout({children}: Props) {
+  const params = useParams()
+  console.log(params)
   return <ClientLayout>
     <div className="flex gap-2 p-2">
       <Link href={"/about"}>About</Link>
@@ -10,3 +17,4 @@ export default function Layout({children}: { children: React.ReactNode }) {
     <div className="h-[200px] border box-border">{children}</div>
   </ClientLayout>
 }
+
