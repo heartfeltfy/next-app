@@ -1,3 +1,5 @@
+import styles from './index.module.css'
+
 export default function Post() {
-  return <div>Post Detail</div>
+  return <div className={styles.DynamicPage}>Post Detail</div>
 }
